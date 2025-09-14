@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const ApiRoutes = require("./routes/index");
 const { PORT } = require("./config/server.config");
 
+
+const { sendBasicMail } = require("./service/email.service");
+
 const port = PORT || 3000;
 
 
@@ -21,11 +24,18 @@ const setupAndStartServer = async () => {
         })
 
         // global Api setup
-        app.use("/api", ApiRoutes);
+        // app.use("/api", ApiRoutes);
 
 
         app.listen(port, () => {
             console.log(`Server is listening on port http://localhost:${port}`);
+
+            sendBasicMail(
+                "vani143@gmail.com",
+                "krishsin2254@gmail.com",
+                "My vani letter.",
+                "this letter is very deeply close to my heart."
+            )
         })
 
 
