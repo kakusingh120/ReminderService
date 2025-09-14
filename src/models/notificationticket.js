@@ -31,7 +31,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       values: ["PENDING", "SUCCESS", "FAILED"]
     },
-    notificationTime: DataTypes.DATE
+    notificationTime: {
+      type: DataTypes.DATE,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'NotificationTicket',
