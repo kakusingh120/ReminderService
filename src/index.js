@@ -6,7 +6,7 @@ const { PORT } = require("./config/server.config");
 
 
 // const { sendBasicMail } = require("./service/email.service");
-const cron = require('node-cron');
+const jobs = require("./utils/job");
 
 
 const port = PORT || 3000;
@@ -26,7 +26,7 @@ const setupAndStartServer = async () => {
         })
 
         // global Api setup
-        // app.use("/api", ApiRoutes);
+        app.use("/api", ApiRoutes);
 
 
         app.listen(port, () => {
@@ -38,6 +38,14 @@ const setupAndStartServer = async () => {
             //     "My vani letter.",
             //     "this letter is very deeply close to my heart."
             // )
+
+
+
+
+            jobs();
+
+
+
 
             // cron.schedule('*/5 * * * * *', () => {
             //     console.log('running a task every 5 sec');
