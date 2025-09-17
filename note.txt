@@ -1,0 +1,9 @@
+[Service 1 (100qps) Publisher] —————> message queue [msgi, msg2 ... msg 160] -———————>[Service 2 (20qps) Subscriber]
+[Service 2 (Publisher)] 一-一一 message queue [msgs] ——> [Servivce 1 (subcriber)]
+
+
+
+leetcode backend (how to test case work.)
+
+[input text 1] -> [output text]
+submit -> [submission text]

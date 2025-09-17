@@ -12,7 +12,7 @@ const sender = require("../config/email.config");
 
 const setupJobs = async () => {
     try {
-        cron.schedule('*/1 * * * *', async () => {
+        cron.schedule('*/20 * * * *', async () => {
             // console.log('running a task every 5 min');
             const response = await emailService.fetchPendingEmails();
             response.forEach((email) => {
