@@ -5,7 +5,7 @@ const ApiRoutes = require("./routes/index");
 const { PORT } = require("./config/server.config");
 
 
-// const { sendBasicMail } = require("./service/email.service");
+const { createChannel } = require("./utils/messageQueue");
 const jobs = require("./utils/job");
 
 
@@ -18,6 +18,8 @@ const setupAndStartServer = async () => {
         // middleware setup
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
+
+        // const channel = await createChannel();
 
 
         // route setup
@@ -42,7 +44,7 @@ const setupAndStartServer = async () => {
 
 
 
-            // jobs();
+            jobs();
 
 
 
