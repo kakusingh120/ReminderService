@@ -59,4 +59,7 @@ Write-Host @"
 +-----------+ +-----------+ +-----------+
 | Consumer1 | | Consumer2 | | Consumer3 |
 +-----------+ +-----------+ +-----------+
-"@
+"
+
+
+Publishing and createChannel logic same always, but some changes subscribe logic according to need. 
